@@ -14,20 +14,44 @@
   "contributes": {
     "commands": [
       {
-        "command": "listo.squareWrapMultiLine",
-        "title": "Wrap list with [] - multiline"
-      },
-      {
-        "command": "listo.squareWrapSingleLine",
-        "title": "Wrap list with [] - single line"
-      },
-      {
-        "command": "listo.circleWrapMultiLine",
+        "command": "listo.parenthesesMultiLine",
         "title": "Wrap list with () - multiline"
       },
       {
-        "command": "listo.circleWrapSingleLine",
+        "command": "listo.parenthesesSingleLine",
         "title": "Wrap list with () - single line"
+      },
+      {
+        "command": "listo.squareBracketsMultiLine",
+        "title": "Wrap list with [] - multiline"
+      },
+      {
+        "command": "listo.squareBracketsSingleLine",
+        "title": "Wrap list with [] - single line"
+      },
+      {
+        "command": "listo.angleBracketsMultiLineWrapper",
+        "title": "Wrap list with <> - multiline"
+      },
+      {
+        "command": "listo.angleBracketsSingleLineWrapper",
+        "title": "Wrap list with <> - single line"
+      },
+      {
+        "command": "listo.curlyBracketsMultiLineWrapper",
+        "title": "Wrap list with {} - multiline"
+      },
+      {
+        "command": "listo.curlyBracketsSingleLineWrapper",
+        "title": "Wrap list with {} - single line"
+      },
+      {
+        "command": "listo.jsonMultiLineWrapper",
+        "title": "List to JSON - multiline"
+      },
+      {
+        "command": "listo.jsonSingleLineWrapper",
+        "title": "List to JSON - single line"
       },
       {
         "command": "listo.customWrap",

@@ -1,20 +1,27 @@
 import * as vscode from 'vscode';
 import { Wrapper } from './wrapper.type';
 import { getFormattedText } from './format-text';
+import { angleBracketsMultiLineWrapper, curlyBracketsMultiLineWrapper, jsonMultiLineWrapper, parenthesesMultiLineWrapper, squareBracketsMultiLineWrapper } from './default-wrappers';
 
 export function activate(context: vscode.ExtensionContext) {
 
 	console.log('"listo" extension active');
 
-	const disposable1 = vscode.commands.registerCommand('listo.circleWrapMultiLine', () => wrapText({ listStart: '(', listEnd: ')', itemStart: '"', itemEnd: '"', itemJoin: ',', newLine: true }));
-	const disposable2 = vscode.commands.registerCommand('listo.circleWrapSingleLine', () => wrapText({ listStart: '(', listEnd: ')', itemStart: '"', itemEnd: '"', itemJoin: ',', newLine: false }));
+	const disposables = [
+		vscode.commands.registerCommand('listo.parenthesesMultiLine', () => wrapText(parenthesesMultiLineWrapper)),
+		vscode.commands.registerCommand('listo.parenthesesSingleLine', () => wrapText({ ...parenthesesMultiLineWrapper, newLine: false })),
+		vscode.commands.registerCommand('listo.squareBracketsMultiLine', () => wrapText(squareBracketsMultiLineWrapper)),
+		vscode.commands.registerCommand('listo.squareBracketsSingleLine', () => wrapText({ ...squareBracketsMultiLineWrapper, newLine: false })),
+		vscode.commands.registerCommand('listo.angleBracketsMultiLineWrapper', () => wrapText(angleBracketsMultiLineWrapper)),
+		vscode.commands.registerCommand('listo.angleBracketsSingleLineWrapper', () => wrapText({ ...angleBracketsMultiLineWrapper, newLine: false })),
+		vscode.commands.registerCommand('listo.curlyBracketsMultiLineWrapper', () => wrapText(curlyBracketsMultiLineWrapper)),
+		vscode.commands.registerCommand('listo.curlyBracketsSingleLineWrapper', () => wrapText({ ...curlyBracketsMultiLineWrapper, newLine: false })),
+		vscode.commands.registerCommand('listo.jsonMultiLineWrapper', () => wrapText(jsonMultiLineWrapper)),
+		vscode.commands.registerCommand('listo.jsonSingleLineWrapper', () => wrapText({ ...jsonMultiLineWrapper, newLine: false })),
+		vscode.commands.registerCommand('listo.customWrap', () => getCustomWrap().then(wrapText)),
+	];
 
-	const disposable3 = vscode.commands.registerCommand('listo.squareWrapMultiLine', () => wrapText({ listStart: '[', listEnd: ']', itemStart: '"', itemEnd: '"', itemJoin: ',', newLine: true }));
-	const disposable4 = vscode.commands.registerCommand('listo.squareWrapSingleLine', () => wrapText({ listStart: '[', listEnd: ']', itemStart: '"', itemEnd: '"', itemJoin: ',', newLine: false }));
-
-	const disposable5 = vscode.commands.registerCommand('listo.customWrap', () => getCustomWrap().then(wrapText));
-
-	context.subscriptions.push(disposable1, disposable2, disposable3, disposable4, disposable5);
+	context.subscriptions.push(...disposables);
 }
 
 
