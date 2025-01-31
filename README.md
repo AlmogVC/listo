@@ -1,5 +1,7 @@
 # listo README
 
+[marketplace link](https://marketplace.visualstudio.com/items?itemName=almog-vagman-ciprut.listo)
+
 Using vs-code to structure big lists?
 Maybe you are creating a list for:
 * `$in` for MongDB - `$in: ['a', 'b', 'c', ...]`
