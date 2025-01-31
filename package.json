@@ -3,6 +3,7 @@
   "displayName": "listo",
   "description": "Wraps lists separated by eof in the user-defined wrappers",
   "version": "0.0.1",
+  "publisher": "almog-vagman-ciprut",
   "engines": {
     "vscode": "^1.96.0"
   },
