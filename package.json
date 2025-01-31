@@ -2,7 +2,7 @@
   "name": "listo",
   "displayName": "listo",
   "description": "Wraps lists separated by eof in the user-defined wrappers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "almog-vagman-ciprut",
   "icon": "images/icon.jpg",
   "engines": {
